@@ -6,7 +6,7 @@ RUN apt-get update && apt-get -y --no-install-recommends install \
  && rm -rf /var/lib/apt/lists/*
 WORKDIR /build
 COPY checksum checksum
-ADD http://prdownloads.sourceforge.net/sisc/sisc-1.16.6.jar sisc.jar
+ADD https://github.com/lambdaconservatory/scheme-release-archive/blob/master/sisc/sisc-1.16.6.jar sisc.jar
 RUN sha256sum sisc.jar && sha256sum -c checksum
 RUN unzip sisc.jar "sisc/*"
 WORKDIR /build/sisc
